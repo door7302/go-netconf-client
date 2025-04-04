@@ -63,7 +63,7 @@ func (session *Session) AsyncRPC(operation message.RPCMethod, callback Callback)
 	// register the listener for the message
 	session.Listener.Register(operation.GetMessageID(), callback)
 
-	session.logger.Info("Sending RPC")
+	//session.logger.Info("Sending RPC")
 	err = session.Transport.Send(request)
 	if err != nil {
 		return err
@@ -85,12 +85,12 @@ func (session *Session) SyncRPC(operation message.RPCMethod, timeout int32) (*me
 	reply := make(chan message.RPCReply, 1)
 	callback := func(event Event) {
 		reply <- *event.RPCReply()
-		session.logger.Info("Successfully executed RPC")
+		//session.logger.Info("Successfully executed RPC")
 	}
 	session.Listener.Register(operation.GetMessageID(), callback)
 
 	// send rpc
-	session.logger.Info("Sending RPC")
+	//session.logger.Info("Sending RPC")
 	err = session.Transport.Send(request)
 	if err != nil {
 		return nil, err
