@@ -1,4 +1,4 @@
-module github.com/openshift-telco/go-netconf-client
+module github.com/door7302/go-netconf-client
 
 go 1.22.2
 
