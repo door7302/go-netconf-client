@@ -16,7 +16,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/openshift-telco/go-netconf-client/netconf/message"
+	"github.com/door7302/go-netconf-client/netconf/message"
 )
 
 // DefaultCapabilities sets the default capabilities of the client library.
